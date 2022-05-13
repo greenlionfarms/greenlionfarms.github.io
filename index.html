@@ -11,8 +11,8 @@
   <script type="text/x-template" id="main">
     <v-app>
       <v-main>
-        <v-container fluid class="pa-3">
-          <v-row>
+        <v-container fluid>
+          <v-row class="pa-3">
             <v-text-field
               v-model="url"
               placeholder="Enter URL here"
@@ -25,13 +25,13 @@
               @click="generateQrCode"
             >Generate</v-btn>
           </v-row>
-          <v-row class="justify-center">
+          <v-row class="justify-center pa-3">
             <canvas
               id="qrcode"
               style="height: 180px; width: 180px; border: 3px dashed grey;"
             ></canvas>
           </v-row>
-          <v-row class="justify-center">
+          <v-row class="justify-center pa-3">
             <v-btn
               color="primary"
               @click="print"
