@@ -18,7 +18,7 @@
             aria-placeholder="Enter URL here"
             @change="generateQrCode"
           ></v-text-field>
-          <v-row>
+          <v-row class="justify-center">
             <canvas id="qrcode"></canvas>
           </v-row>
         </v-container>
@@ -34,12 +34,15 @@
       vuetify: new Vuetify(),
       data () {
         return {
-          url: ''
+          url: '',
+          options: {
+            version: 5
+          },
         }
       },
       methods: {
         generateQrCode () {
-          QRCode.toCanvas(document.getElementById('qrcode'), this.url, function (error) {
+          QRCode.toCanvas(document.getElementById('qrcode'), this.url, this.options, function (error) {
             if (error) console.error(error)
             console.log('success!')
           })
