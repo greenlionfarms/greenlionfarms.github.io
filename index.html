@@ -31,7 +31,7 @@
           <v-row class="justify-center">
             <v-btn
               color="primary"
-              @click="window.print()"
+              @click="print"
             >Print</v-btn>
           </v-row>
         </v-container>
@@ -53,6 +53,11 @@
           },
         }
       },
+      computed: {
+        window () {
+          return window
+        }
+      },
       methods: {
         generateQrCode () {
           QRCode.toCanvas(document.getElementById('qrcode'), this.url, this.options, function (error) {
@@ -60,6 +65,9 @@
             console.log('success!')
           })
         },
+        print () {
+          this.window.print()
+        }
       },
     }).$mount('#app')
   </script>
