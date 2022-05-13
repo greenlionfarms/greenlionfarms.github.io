@@ -28,10 +28,10 @@
           <v-row class="justify-center">
             <canvas id="qrcode"></canvas>
           </v-row>
-          <v-row>
+          <v-row class="justify-center">
             <v-btn
               color="primary"
-              @click="print"
+              @click="window.print()"
             >Print</v-btn>
           </v-row>
         </v-container>
@@ -59,7 +59,7 @@
             if (error) console.error(error)
             console.log('success!')
           })
-        }
+        },
       },
     }).$mount('#app')
   </script>
