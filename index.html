@@ -11,7 +11,7 @@
   <script type="text/x-template" id="main">
     <v-app>
       <v-main>
-        <v-container>
+        <v-container fluid>
           <v-row>
             <v-text-field
               v-model="url"
@@ -26,7 +26,10 @@
             >Generate</v-btn>
           </v-row>
           <v-row class="justify-center">
-            <canvas id="qrcode"></canvas>
+            <canvas
+              id="qrcode"
+              style="border: 3px dashed grey;"
+            ></canvas>
           </v-row>
           <v-row class="justify-center">
             <v-btn
