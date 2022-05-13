@@ -16,7 +16,11 @@
             v-model="url"
             placeholder="Enter URL here"
             aria-placeholder="Enter URL here"
+            @change="generateQrCode"
           ></v-text-field>
+          <v-content>
+            <canvas id="qrcode"></canvas>
+          </v-content>
         </v-container>
       </v-main>
     </v-app>
@@ -32,7 +36,15 @@
         return {
           url: ''
         }
-      }
+      },
+      methods: {
+        generateQrCode () {
+          QRCode.toCanvas(document.getElementById('qrcode'), this.url, function (error) {
+            if (error) console.error(error)
+            console.log('success!')
+          })
+        }
+      },
     }).$mount('#app')
   </script>
 </body>
