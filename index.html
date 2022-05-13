@@ -10,17 +10,25 @@
   <div id="app">
     <v-app>
       <v-main>
-        <v-container>Hello world</v-container>
+        <v-container>
+          <v-text-field v-model="url" aria-placeholder="Enter URL here"></v-text-field>
+        </v-container>
       </v-main>
     </v-app>
   </div>
 
+  <script src="/lib/qrcode.js"></script>
   <script src="//cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="//cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
   <script>
     const vm = new Vue({
       el: '#app',
       vuetify: new Vuetify(),
+      data () {
+        return {
+          url: ''
+        }
+      }
     })
   </script>
 </body>
